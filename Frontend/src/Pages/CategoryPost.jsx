@@ -25,7 +25,7 @@ const CategoryPost = () => {
   return (
     <div>
       {posts.length > 0 ? (
-        <div className="cards flex">
+        <div className="cards flex container mx-auto px-12 mb-6">
           {posts.map(({_id: id, thumbnail, category, title, description, creator,createdAt }) => (
             <BlogPostItem
               key={id}
@@ -40,7 +40,7 @@ const CategoryPost = () => {
           ))}
         </div>
       ) : (
-        <h2>No posts found</h2>
+        <h2 className='text-4xl text-slate-800 text-center font-bold '>No posts found</h2>
       )}
     </div>
   );

@@ -10,21 +10,22 @@ const BlogPostItem = ({ postId, category, title, description, creator, thumbnail
   return (
     <div className='container mx-auto px-4'>
     <div className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 mx-auto">
-      <div className="relative w-full h-64 md:h-80 lg:h-96">
+    <Link to={`/posts/${postId}`}>
+      <div className="relative w-full h-48 md:h-52 lg:h-64">
         <img
           className="w-full h-full object-cover"
           src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${thumbnail}`}
           alt={title}
         />
         <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black via-transparent to-transparent text-white p-3">
-          <Link to={`/posts/${postId}`}>
+          
             <h2 className="font-bold text-lg md:text-xl">{title}</h2>
-          </Link>
+          
         </div>
       </div>
 
-      <div className="p-4">
-        <p className="text-gray-700 text-sm md:text-base mb-4">
+      <div className="p-4  h-48 md:h-52 lg:h-64">
+        <p className="text-gray-700 items-center text-sm md:text-base mb-2">
           {shortDescription}
         </p>
         {/* <div className="flex flex-col md:flex-row justify-between items-start md:items-center mt-4">
@@ -51,6 +52,7 @@ const BlogPostItem = ({ postId, category, title, description, creator, thumbnail
             </Link>
           </div>
       </div>
+      </Link>
     </div>
     </div>
   );

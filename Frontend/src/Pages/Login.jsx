@@ -76,12 +76,7 @@ const Login = () => {
             >
               Sign In
             </button>
-            <button
-              className="bg-slate-700 hover:bg-slate-800 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 transition duration-300 ease-in-out"
-              type="submit"
-            >
-              Sign In
-            </button>
+            
           </div>
         </form>
       </div>

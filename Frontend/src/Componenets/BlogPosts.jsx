@@ -34,7 +34,7 @@ const BlogPosts = () => {
       )}
       <div className="container mx-auto px-4 py-8">
         {posts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {posts.map(({ _id: id, thumbnail, category, title, description, creator, createdAt }) => (
               <BlogPostItem
                 key={id}
@@ -49,7 +49,7 @@ const BlogPosts = () => {
             ))}
           </div>
         ) : (
-          <h2 className="text-center text-lg text-gray-600 mt-8">No posts found</h2>
+          <h2 className='text-4xl text-slate-800 text-center font-bold '>No posts found</h2>
         )}
       </div>
     </>

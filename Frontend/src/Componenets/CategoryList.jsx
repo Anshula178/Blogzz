@@ -25,7 +25,7 @@ const CategoryList = () => {
             <li key={category} className="flex-none">
               <Link
                 to={`posts/categories/${category}`}
-                className="block bg-white text-slate-700 border border-slate-300 hover:bg-slate-200 px-6 py-4 rounded-lg text-sm font-medium shadow-lg hover:shadow-xl transition-transform transform hover:scale-105"
+                className="block bg-white text-slate-700   px-6 py-4 rounded-lg text-sm font-medium  hover:shadow-lg transition-transform transform hover:scale-105"
               >
                 {category}
               </Link>
