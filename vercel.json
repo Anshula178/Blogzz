@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "name": "fullstack-blog-app",
+    "builds": [
+      {
+       
+        "src": "blog-application/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+     
+          "distDir": "build"
+        }
+      },
+      {
+       
+        "src": "backend/index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+    
+      { "src": "/api/(.*)", "dest": "backend/index.js" },
+    
+      { "src": "/(.*)", "dest": "/blog-application/$1" }
+    ]
+  }
+  
