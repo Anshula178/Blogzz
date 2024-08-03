@@ -17,6 +17,9 @@ app.use(express.json());
 app.use(fileUpload()); // Add this middleware to handle file uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
