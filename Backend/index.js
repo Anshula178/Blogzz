@@ -12,7 +12,7 @@ const app = express();
 const Port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({credentials:true, origin:"http://localhost:3000"}));
+app.use(cors());
 app.use(express.json());
 app.use(fileUpload()); // Add this middleware to handle file uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -29,10 +29,7 @@ app.use(notFound);
 app.use(errorHandler);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
     console.log('Connected to MongoDB');
     // Start the server
     app.listen(Port, () => console.log(`Server running on port ${Port}`));
