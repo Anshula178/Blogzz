@@ -1,22 +1,27 @@
 {
-    "version": 2,
-    "name": "fullstack-blog-app",
-    "builds": [
-      {
-        "src": "Frontend/package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "build"
-        }
-      },
-      {
-        "src": "Backend/index.js",
-        "use": "@vercel/node"
+  "version": 2,
+  "name": "fullstack-blog-app",
+  "builds": [
+    {
+      "src": "Frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "Frontend/build"
       }
-    ],
-    "routes": [
-      { "src": "/api/(.*)", "dest": "Backend/index.js" },
-      { "src": "/(.*)", "dest": "/Frontend/$1" }
-    ]
-  }
-  
+    },
+    {
+      "src": "Backend/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/Backend/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/Frontend/build/$1"
+    }
+  ]
+}
